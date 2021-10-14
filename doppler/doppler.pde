@@ -96,9 +96,6 @@ class SOUND {
       radi += 340/fps;
     }
     soundx = posx0 + number * speed * 0.1;
-    if (radi >width) {
-      noLoop();
-    }
   }
   void display() {
     noFill();
