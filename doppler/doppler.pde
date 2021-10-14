@@ -1,7 +1,6 @@
 PImage panelButton1, panelButton2, remortController, startButton, stopButton, resetButton;
-int hm = 1000;
-SOUND[] sounds = new SOUND[hm];
-float posx, posy, posx0, posy0, speed, count, COUNT;
+ArrayList<SOUND> sounds;
+float posx, posy, speed, count;
 boolean resetCount, clickedCount, panelCount;
 float fps = 60;
 void setup() {
@@ -19,31 +18,26 @@ void setup() {
   resetButton = loadImage("https://live.staticflickr.com/65535/51564881144_0248886998_o.png");
   resetButton.resize(5*width/72, 0);
   frameRate(fps);
-  for (int i = 0; i< hm; i++) {
-    sounds[i] = new SOUND(50, 0, i);
-  }
+  sounds = new ArrayList<SOUND>();
   posx = 50;
-  posx0 = 50;
   posy = height/2;
-  posy0 = height/2;
   speed = 340; 
   count = 0;
-  COUNT = 0;
   resetCount = true;
   clickedCount = false;
   panelCount = false;
   textSize(width/100);
   textAlign(CENTER, CENTER);
 }
+
 void draw() {
   backGround();
-  for (int i = 0; i < hm; i++) {
-    sounds[i].calculation();
-  }
-  calculation();
-  for (int i = 0; i < hm; i++) {
-    sounds[i].display();
-  }
-  display();
   panel();
+  time_count();
+  for (int i=0; i<sounds.size(); i++) {
+    sounds.get(i).calculation();
+    sounds.get(i).display();
+  }
+  sound_source();
+  sound_output();
 }

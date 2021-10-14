@@ -20,19 +20,25 @@ void backGround() {
   }
   stroke(0);
 }
-void calculation() {
-  if (clickedCount == true) {
-    count++;
-    posx = speed*count/fps+posx0;
-    if (count %  int(fps/10) == 0) {
-      COUNT ++;
-    }
-  }
-}
-void display() {
+
+void sound_source() {
+  posx = speed*count/fps+50;
   fill(0);
   ellipse(posx, posy, 20, 20);
 }
+
+void sound_output() {
+  if (count %  (fps/10) == 0 && clickedCount == true) {
+    sounds.add(new SOUND(posx, 0));
+  }
+}
+
+void time_count() {
+  if (clickedCount == true) {
+    count++;
+  }
+}
+
 void panel() {
   if (panelCount == false) {
     image(panelButton1, 0, 0);
@@ -41,7 +47,6 @@ void panel() {
     image(remortController, 0, panelButton1.height);
     fill(255);
     text(speed+"m/s", 2*remortController.width/5, panelButton1.height, remortController.width/3, remortController.height);
-    noFill();
   }
   if (clickedCount == false) {
     image(startButton, width/(24*6), height-startButton.height-width/(24*6));

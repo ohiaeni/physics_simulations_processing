@@ -8,12 +8,13 @@ void mouseClicked() {
     }
   }
   if (3*width/(24*6)+startButton.width< mouseX && mouseX < 3*width/(24*6)+startButton.width+resetButton.width && height-resetButton.height-width/(24*6) < mouseY && mouseY < height-width/(24*6)) {
-    posx = posx0;
-    posy = posy0;
+    posx = 50;
     clickedCount = false;
     resetCount = true;
     count = 0;
-    COUNT = 0;
+    for (int i=0; i<sounds.size(); i++) {
+      sounds.clear();
+    }
   }
   if (0 < mouseX && mouseX < panelButton1.width && 0 < mouseY && mouseY < panelButton1.height) {
     if (panelCount == false) {

@@ -1,19 +1,16 @@
 class SOUND {
   float soundx, radi;
-  int number;
-  SOUND(float x, float r, int n) {
+  SOUND(float x, float r) {
     soundx = x;
     radi = r;
-    number = n;
   }
   void calculation() {
     if (resetCount == true) {
       radi = 0;
     }
-    if ( number <= COUNT && clickedCount == true) {
+    if (clickedCount == true) {
       radi += 340/fps;
     }
-    soundx = posx0 + number * speed * 0.1;
   }
   void display() {
     noFill();
