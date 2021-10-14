@@ -8,7 +8,7 @@ void backGround() {
   background(0);
   image(head, 0, (height-head.height)/2);
   image(light, width-light.width, height/2-light.height/2);
-  if (clickedCount == true) {
+  if (resetCount == false) {
     fill(r_i_change, g_i_change, b_i_change);
     ellipse(head.width/2-2*head.width/24, (height-head.height)/2+head.height/4, 3*head.width/5, head.height/3);
   }
@@ -89,7 +89,7 @@ void light_output() {
       green.add(new Light(width-light.width, height/2+width/50, 'B'));
     }
   }
-  if (clickedCount == false) {
+  if (resetCount == true) {
     for (int i = 0; i < red.size(); i++) {
       red.clear();
     }
