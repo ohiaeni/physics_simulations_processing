@@ -26,7 +26,7 @@ void setup() {
   file = createWriter("test.csv");
   fps = 60;
   trajectoryCount = 0;
-  radi = 30;
+  radi = width/100;
   number = 0;
   clickedCount = false;
   panelCount = false;

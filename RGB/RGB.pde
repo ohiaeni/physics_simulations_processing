@@ -10,9 +10,9 @@ void setup() {
   head = loadImage("https://live.staticflickr.com/65535/51575428715_f441600187_o.png");
   head.resize(8*width/18, 0);
   light = loadImage("https://live.staticflickr.com/65535/51575428680_03dd6f8be3_o.png");
-  light.resize(5*width/18, 0);
+  light.resize(5*width/18, height/3-20);
   remortController = loadImage("https://live.staticflickr.com/65535/51575428650_47984b2577_o.png");
-  remortController.resize(5*width/18, 0);
+  remortController.resize(5*width/18, height/3);
   startButton = loadImage("https://live.staticflickr.com/65535/51563400792_8950903254_o.png");
   startButton.resize(5*width/72, 0);
   stopButton = loadImage("https://live.staticflickr.com/65535/51563400782_aace81f8ba_o.png");
@@ -20,9 +20,9 @@ void setup() {
   resetButton = loadImage("https://live.staticflickr.com/65535/51564881144_0248886998_o.png");
   resetButton.resize(5*width/72, 0);
   spectrum = loadImage("https://live.staticflickr.com/65535/51575456450_fb631bc801_o.png");
-  spectrum.resize(width/2, 0);
+  spectrum.resize(width/2, 10);
   graph = loadImage("https://live.staticflickr.com/65535/51577434655_71995dd63f_o.png");
-  graph.resize(width/2, 0);
+  graph.resize(width/2, height/3);
   clickedCount = false;
   resetCount = true;
   dataArray = loadTable("https://dl.dropboxusercontent.com/s/952h9n9b3hrfd4y/rgbData.csv", "header");
