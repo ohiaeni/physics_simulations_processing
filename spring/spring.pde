@@ -28,12 +28,11 @@ void setup() {
   frameRate(fps);
   textAlign(CENTER, CENTER);
   textSize(width / 100);
-  s1 = new Spring(1, 1, 1, 100, 1);
-  s2 = new Spring(1, 1, 1, 100, 2);
+  s1 = new Spring(1, 1, 1, int(height / 8), 1);
+  s2 = new Spring(1, 1, 1, int(height / 8), 2);
 }
 
 void draw() {
-  trajectory();
   backGround();
   remocon();
   time_count();

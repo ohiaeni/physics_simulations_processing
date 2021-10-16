@@ -1,4 +1,4 @@
-void mouseClicked() {
+void mousePressed() {
   if (width - panelButton1.width < mouseX && mouseX < width && 0 < mouseY && mouseY < panelButton1.height) {
     if (panelCount == true) {
       panelCount = false;

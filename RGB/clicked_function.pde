@@ -1,4 +1,4 @@
-void mouseClicked() {
+void mousePressed() {
   if (width/(24*6) < mouseX && mouseX < width/(24*6)+startButton.width && height-startButton.height-width/(24*6) < mouseY && mouseY < height-width/(24*6)) {
     if (clickedCount == true) {
       clickedCount = false;

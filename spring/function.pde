@@ -1,9 +1,10 @@
-void trajectory() {
+
+void backGround() {
   background(255);
   pg1.beginDraw();
   pg1.fill(0);
   pg1.ellipse(count, s1.posy, 5, 5);
-  if (resetCount ==  true) {
+  if (resetCount == true) {
     pg1.fill(255);
     pg1.rect(0, 0, 5 * width / 18, height / 2);
   }
@@ -18,9 +19,6 @@ void trajectory() {
   }
   pg2.endDraw();
   image(pg2, 10 * width / 18, height / 2);
-}
-
-void backGround() {
   stroke(0);
   strokeWeight(2);
   noFill();
@@ -56,11 +54,11 @@ void remocon() {
     }
   }
   if (clickedCount == false) {
-    image(startButton, width - 3 * width / 18 + width / (24 * 6), height - startButton.height - width / (24 * 6));
+    image(startButton, width / (24 * 6), height - startButton.height - width / (24 * 6));
   } else {
-    image(stopButton, width - 3 * width / 18 + width / (24 * 6), height - startButton.height - width / (24 * 6));
+    image(stopButton, width / (24 * 6), height - startButton.height - width / (24 * 6));
   }
-  image(resetButton, width - 3 * width / 18 + 3 * width / (24 * 6) + startButton.width, height - resetButton.height - width / (24 * 6));
+  image(resetButton, 3 * width / (24 * 6) + startButton.width, height - resetButton.height - width / (24 * 6));
 }
 
 void time_count() {

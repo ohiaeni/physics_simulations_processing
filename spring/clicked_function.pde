@@ -1,5 +1,5 @@
-void mouseClicked() {
-  if (width - 3 * width / 18 + width / (24 * 6)< mouseX && mouseX < width - 3 * width / 18 + startButton.width + width / (24 * 6) && height - startButton.height - width / (24 * 6) < mouseY && mouseY < height - width / (24 * 6)) {   
+void mousePressed() {
+ if (width / (24 * 6) < mouseX && mouseX < startButton.width + width / (24 * 6) && height - startButton.height - width / (24 * 6) < mouseY && mouseY < height - width / (24 * 6)) {
     if (clickedCount == false) {
       clickedCount = true;
       resetCount = false;
@@ -7,12 +7,12 @@ void mouseClicked() {
       clickedCount = false;
     }
   }
-  if (width - 3 * width / 18 + 3 * width / (24 * 6) + startButton.width< mouseX && mouseX < width - 3 * width / 18 + 3 * width / (24 * 6) + startButton.width + resetButton.width && height - resetButton.height - width / (24 * 6) < mouseY && mouseY < height - width / (24 * 6)) {
+  if (3 * width / (24 * 6) + startButton.width < mouseX && mouseX < 3 * width / (24 * 6) + startButton.width + resetButton.width && height - resetButton.height - width / (24 * 6) < mouseY && mouseY < height - width / (24 * 6)) {
     clickedCount = false;
     resetCount = true;
     count = 0;
-    s1 = new Spring(1, 1, 1, 100, 1);
-    s2 = new Spring(1, 1, 1, 100, 2);
+    s1 = new Spring(1, 1, 1, int(height / 8), 1);
+    s2 = new Spring(1, 1, 1, int(height / 8), 2);
   }
   if (resetCount == true) {
     for (int i = 0; i < 9; i++) {
