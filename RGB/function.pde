@@ -41,6 +41,9 @@ void remocon() {
   ellipse(width-9*remortController.width/10+(r_i_change/255)*8*remortController.width/10, height-5*remortController.height/6, 3*width/400, 3*width/400);
   ellipse(width-9*remortController.width/10+(g_i_change/255)*8*remortController.width/10, height-3*remortController.height/6, 3*width/400, 3*width/400);
   ellipse(width-9*remortController.width/10+(b_i_change/255)*8*remortController.width/10, height-1*remortController.height/6, 3*width/400, 3*width/400);
+  text(int(r_i_change), width - 9 * remortController.width / 10 + (r_i_change / 255) * 8 * remortController.width / 10, height - 5 * remortController.height / 6 + 3 * width / 200);
+  text(int(g_i_change), width - 9 * remortController.width / 10 + (g_i_change / 255) * 8 * remortController.width / 10, height - 3 * remortController.height / 6 + 3 * width / 200);
+  text(int(b_i_change), width - 9 * remortController.width / 10 + (b_i_change / 255) * 8 * remortController.width / 10, height - 1 * remortController.height / 6 + 3 * width / 200);
   if (clickedCount == false) {
     image(startButton, width/(24*6), height-startButton.height-width/(24*6));
   } else {
@@ -66,7 +69,7 @@ void graph() {
     float green = dataArray.getFloat(i, 2)*(g_i_change/255);
     float blue = dataArray.getFloat(i, 3)*(b_i_change/255);
     noStroke();
-    fill(255);
+    fill(r_i_change, g_i_change, b_i_change);
     ellipse(width-graph.width+(i+30)*graph.width/400, graph.height-(red+green+blue)*graph.height/2, 5, 5);
     fill(255, 0, 0);
     ellipse(width-graph.width+(i+30)*graph.width/400, graph.height-red*graph.height/2, 5, 5);
