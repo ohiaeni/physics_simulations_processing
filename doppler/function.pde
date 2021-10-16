@@ -31,11 +31,6 @@ void sound_output() {
   if (count %  (fps/10) == 0 && clickedCount == true) {
     sounds.add(new SOUND(posx, 0));
   }
-  for (int i = 0; i < sounds.size(); i++) {
-    if (posx-sounds.get(i).radi < 0) {
-      sounds.remove(i);
-    }
-  }
 }
 
 void time_count() {

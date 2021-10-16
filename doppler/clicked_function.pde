@@ -23,10 +23,10 @@ void mousePressed() {
       panelCount = false;
     }
   }
-  if (dist(9*remortController.width/10, panelButton1.height+3*remortController.height/10, mouseX, mouseY) < remortController.width/20 && panelCount == true) {
+  if (dist(9*remortController.width/10, panelButton1.height+3*remortController.height/10, mouseX, mouseY) < remortController.width/20 && panelCount == true && resetCount == true) {
     speed+=10;
   }
-  if (dist(9*remortController.width/10, panelButton1.height+7*remortController.height/10, mouseX, mouseY) < remortController.width/20 && panelCount == true) {
+  if (dist(9*remortController.width/10, panelButton1.height+7*remortController.height/10, mouseX, mouseY) < remortController.width/20 && panelCount == true && resetCount == true) {
     if (speed > 0) {
       speed-=10;
     }
