@@ -14,7 +14,7 @@ void setup() {
   for (int i = 0; i < hm; i++) {
     balls[i] = new Ball(dataArray.getFloat(i, 3), asin(100/dataArray.getFloat(i, 3)));
   }
-  gravity = 200;
+  gravity = 9.8;
   radi = width/100;
   count = 0;
   clicked_count = false;

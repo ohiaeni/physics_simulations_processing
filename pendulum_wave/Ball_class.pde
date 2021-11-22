@@ -5,7 +5,7 @@ class Ball {
     theta0 = t0;
   }
   void move() {
-    theta = theta0*sin(count*sqrt(gravity/(Long*60)));
+    theta = theta0*sin(sqrt(gravity/(Long*(0.25/300)))*count/60);
     posx = width/2+Long*sin(theta);
     posy = 100+Long*cos(theta);
   }

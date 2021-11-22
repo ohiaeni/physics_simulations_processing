@@ -23,8 +23,8 @@ void mousePressed() {
     count = 0;
     b1 = new Ball(500, 8);
     b2 = new Ball(500, 12);
-    b1.theta = radians(b1.theta0)*cos(sqrt(gravity/(b1.string_length))*count*1.2);
-    b2.theta = radians(b2.theta0)*cos(sqrt(gravity/(b2.string_length))*count*1.2);
+    b1.theta = radians(b1.theta0)*cos(sqrt(gravity/(b1.string_length/float(50*100)))*count/60);
+    b2.theta = radians(b2.theta0)*cos(sqrt(gravity/(b2.string_length/float(50*100)))*count/60);
   }
   if (clicked_count == false) {
     for (int n = 0; n < 2; n++) {
