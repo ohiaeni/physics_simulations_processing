@@ -1,4 +1,4 @@
-void mouseClicked() {
+void mousePressed() {
   if (width-4*stop_watch.width/5 <mouseX && mouseX < width-4*stop_watch.width/5+start_button.width && height-stop_watch.height+11*stop_watch.height/20 < mouseY && mouseY < height-stop_watch.height+11*stop_watch.height/20+start_button.height) {
     if (clicked_count == false) {
       clicked_count =true;
