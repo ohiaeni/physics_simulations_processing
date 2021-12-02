@@ -1,11 +1,13 @@
-int radi;
+int radi, fps;
 boolean clicked_count, grid_count;
-float gravity, count;
-PImage ball, remort_controller, panel_button1, panel_button2, start_button, stop_button, reset_button, grid_button1, grid_button2;
+float gravity, count, timer_count;
+PImage ball, remort_controller, panel_button1, panel_button2, start_button, stop_button, reset_button, grid_button1, grid_button2, timer;
+PrintWriter file;
 Ball b1, b2;
 void setup() {
   fullScreen();
   radi = width/50;
+  fps = 60;
   clicked_count = false;
   grid_count = false;
   gravity = 9.8;
@@ -28,10 +30,13 @@ void setup() {
   grid_button1.resize(width/9, 0);
   grid_button2 = loadImage("https://live.staticflickr.com/65535/51686220835_3dd44a922d_o.png");
   grid_button2.resize(width/9, 0);
+  timer = loadImage("https://live.staticflickr.com/65535/51571742538_2fc8db5a00_o.png");
+  timer.resize(width / 6, 0);
+  file = createWriter("test.csv");
   b1 = new Ball(500, 8);
   b2 = new Ball(500, 12);
-  b1.theta = radians(b1.theta0)*cos(sqrt(gravity/(b1.string_length/float(50*100)))*count/60);
-  b2.theta = radians(b2.theta0)*cos(sqrt(gravity/(b2.string_length/float(50*100)))*count/60);
+  b1.theta = radians(b1.theta0)*cos(sqrt(gravity/(b1.string_length/float(50*100)))*count/fps);
+  b2.theta = radians(b2.theta0)*cos(sqrt(gravity/(b2.string_length/float(50*100)))*count/fps);
   textAlign(CENTER, CENTER);
   textSize(width/100);
 }
@@ -57,4 +62,5 @@ void draw() {
   tint(255);
   stroke(0);
   button();
+  data();
 }

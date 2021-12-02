@@ -71,4 +71,13 @@ void mousePressed() {
       grid_count = true;
     }
   }
+  if (dist(width - (width / 6) - timer.width / 10, height - 7 * timer.height / 10, mouseX, mouseY) < timer.width / 20) {
+    timer_count++;
+  }
+  if (dist(width - (width / 6) - timer.width / 10, height - 3 * timer.height / 10, mouseX, mouseY) < timer.width / 20) {
+    timer_count--;
+    if (timer_count < 0) {
+      timer_count = 0;
+    }
+  }
 }

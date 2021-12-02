@@ -18,7 +18,7 @@ class Ball {
   void calculate(float n) {
     posx = n+width/6+string_length*sin(theta);
     posy = 100+string_length*cos(theta);
-    theta = radians(theta0)*cos(sqrt(gravity/(string_length/float(50*100)))*count/60);
+    theta = radians(theta0)*cos(sqrt(gravity/(string_length/float(50*100)))*count/fps);
   }
   void display(float n) {
     line(posx, posy, n+width/6, 100);

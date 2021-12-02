@@ -38,4 +38,10 @@ void button() {
     image(stop_button, width-3*width/(24*6)-reset_button.width-stop_button.width, height-stop_button.height-width/(24*6));
   }
   image(reset_button, width-reset_button.width-width/(24*6), height-reset_button.height-width/(24*6));
+  image(timer, width - 2 * width / 6, height - timer.height);
+  if (timer_count != 0) {
+    text(nf((timer_count - count / 60.0), 1, 2) + "s", width - width / 3 + 2 * timer.width / 5, height - timer.height, timer.width / 3, timer.height);
+  } else {
+    text(0 + "s", width - width / 3 + 2 * timer.width / 5, height - timer.height, timer.width / 3, timer.height);
+  }
 }
