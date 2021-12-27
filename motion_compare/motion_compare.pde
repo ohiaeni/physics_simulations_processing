@@ -1,0 +1,50 @@
+PImage remort_controller, grid_button1, grid_button2, panel_button1, panel_button2, start_button, stop_button, reset_button, timer;
+boolean clicked_count, grid_count, panel_count, reset_count;
+float count, fps;
+int radi; 
+PGraphics pg;
+Ball b1, b2;
+void setup() {
+  fullScreen();
+  remort_controller = loadImage("https://live.staticflickr.com/65535/51700454420_5c467158de_o.png");
+  remort_controller.resize(width/6, 0);
+  grid_button1 = loadImage("https://live.staticflickr.com/65535/51685319741_3fdcf2eb27_o.png");
+  grid_button1.resize(width/9, 0);
+  grid_button2 = loadImage("https://live.staticflickr.com/65535/51686220835_3dd44a922d_o.png");
+  grid_button2.resize(width/9, 0);
+  panel_button1 = loadImage("https://live.staticflickr.com/65535/51564193876_f9b9bcea03_o.png");
+  panel_button1.resize(width/9, 0);
+  panel_button2 = loadImage("https://live.staticflickr.com/65535/51564881204_9a92af5b7b_o.png");
+  panel_button2.resize(width/9, 0);
+  start_button = loadImage("https://live.staticflickr.com/65535/51673047512_5eeef070b7_o.png");
+  start_button.resize(5*width/72, 0);
+  stop_button = loadImage("https://live.staticflickr.com/65535/51674520944_fec8f44a10_o.png");
+  stop_button.resize(5*width/72, 0);
+  reset_button = loadImage("https://live.staticflickr.com/65535/51674724605_d816b9c9f2_o.png");
+  reset_button.resize(5*width/72, 0);
+  timer = loadImage("https://live.staticflickr.com/65535/51778694369_6d6783e009_o.png");
+  timer.resize(width/6, 0);
+  clicked_count = false;
+  grid_count = true;
+  panel_count = true;
+  reset_count = true;
+  count = 0;
+  fps = 60;
+  radi = width/50;
+  pg = createGraphics(width, height);
+  b1 = new Ball(radi, height/2-height/25-radi, 10, 0);
+  b2 = new Ball(radi, height-height/25-radi, 10, 0);  
+  frameRate(fps);
+  textSize(width/100);
+  textAlign(CENTER, CENTER);
+}
+void draw() {
+  back_ground_1();
+  calculate();
+  b1.calculate();
+  b2.calculate();
+  b1.display();
+  b2.display();
+  back_ground_2();
+  remocon();
+}
