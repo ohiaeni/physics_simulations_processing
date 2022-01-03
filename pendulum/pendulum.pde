@@ -14,7 +14,7 @@ void setup() {
   count = 0;
   ball = loadImage("https://live.staticflickr.com/65535/51671503863_cb9cfd611d_o.png");
   ball.resize(width/18, 0);
-  remort_controller = loadImage("https://live.staticflickr.com/65535/51671943434_7875403763_o.png");
+  remort_controller = loadImage("https://live.staticflickr.com/65535/51671943434_b5b8f73f3b_o.png");
   remort_controller.resize(width/6, 0);
   panel_button1 = loadImage("https://live.staticflickr.com/65535/51564193876_f9b9bcea03_o.png");
   panel_button1.resize(width/9, 0);
