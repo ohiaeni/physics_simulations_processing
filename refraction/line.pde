@@ -4,50 +4,6 @@ void lineCalculate() {
   n12 = n2/n1;
   boundary = sin(theta1)/n12;
 }
-void lineOperation() {
-  if (mousePressed) {
-    count++;
-    if (dist(width-rotateRemocon.width+9*rotateRemocon.width/10, height-rotateRemocon.height+3*rotateRemocon.height/10, mouseX, mouseY) < rotateRemocon.width/20 && lightRotateTheta <90 && count >10) {
-      if (count > 30) {
-        lightRotateTheta +=0.5;
-      } else {
-        lightRotateTheta +=0.1;
-      }
-      theta1 = radians(lightRotateTheta);
-      theta2 = asin(sin(theta1)/n12);
-      n12 = n2/n1;
-      if (lightRotateTheta > 90) {
-        lightRotateTheta = 90;
-      }
-    }
-    if (dist(width-rotateRemocon.width+9*rotateRemocon.width/10, height-rotateRemocon.height+7*rotateRemocon.height/10, mouseX, mouseY) < rotateRemocon.width/20 && lightRotateTheta >-90&& count >10) {
-      if (count > 30) {
-        lightRotateTheta -=0.5;
-      } else {
-        lightRotateTheta -=0.1;
-      }
-      theta1 = radians(lightRotateTheta);
-      theta2 = asin(sin(theta1)/n12);
-      n12 = n2/n1;
-      if (lightRotateTheta < -90) {
-        lightRotateTheta = -90;
-      }
-    }
-    theta1 = radians(lightRotateTheta);
-    theta2 = asin(sin(theta1)/n12);
-    n12 = n2/n1;
-  } else {
-    count=0;
-  }
-  fill(255);
-  image(rotateRemocon, width-rotateRemocon.width, height-rotateRemocon.height);
-  text(nf(abs(lightRotateTheta), 1, 1)+"'", width-rotateRemocon.width+5*rotateRemocon.width/12, height-rotateRemocon.height+rotateRemocon.height/4, rotateRemocon.width/3, rotateRemocon.height/2);
-  image(nRemocon, 0, height/2-nRemocon.height);
-  text(nf(n2, 1, 1)+"'", 5*nRemocon.width/12, height/2-nRemocon.height+nRemocon.height/4, nRemocon.width/3, nRemocon.height/2);
-  image(nRemocon, 0, height/2);
-  text(nf(n1, 1, 1)+"'", 5*nRemocon.width/12, height/2+nRemocon.height/4, nRemocon.width/3, nRemocon.height/2);
-}
-
 
 void lineBackgroundSetting() {
   noFill();
@@ -76,8 +32,8 @@ void lineBackgroundSetting() {
     fill(255);
     text(nf(abs(degrees(theta1)), 1, 1)+"'", width/2-2*width/50, height/2+4*width/50);
     text(nf(abs(degrees(theta1)), 1, 1)+"'", width/2+2*width/50, height/2+4*width/50);
-    if(theta1 != PI/2 && theta1 != -PI/2){
-    text(nf(abs(degrees(theta2)), 1, 1)+"'", width/2+2*width/50, height/2-4*width/50);
+    if (theta1 != PI/2 && theta1 != -PI/2) {
+      text(nf(abs(degrees(theta2)), 1, 1)+"'", width/2+2*width/50, height/2-4*width/50);
     }
   } else {
     if (theta1 > 0) {

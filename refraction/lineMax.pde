@@ -4,50 +4,6 @@ void lineMaxCalculate() {
   n12 = n2/n1;
   boundary = sin(theta1)/n12;
 }
-void lineMaxOperation() {
-  if (mousePressed) {
-    count++;
-    if (dist(width-rotateRemocon.width+9*rotateRemocon.width/10, height-rotateRemocon.height+3*rotateRemocon.height/10, mouseX, mouseY) < rotateRemocon.width/20 && lightRotateTheta <90 && count >10) {
-      if (count > 30) {
-        lightRotateTheta +=0.5;
-      } else {
-        lightRotateTheta +=0.1;
-      }
-      theta1 = radians(lightRotateTheta);
-      theta2 = asin(sin(theta1)/n12);
-      n12 = n2/n1;
-      if (lightRotateTheta > 90) {
-        lightRotateTheta = 90;
-      }
-    }
-    if (dist(width-rotateRemocon.width+9*rotateRemocon.width/10, height-rotateRemocon.height+7*rotateRemocon.height/10, mouseX, mouseY) < rotateRemocon.width/20 && lightRotateTheta >-90&& count >10) {
-      if (count > 30) {
-        lightRotateTheta -=0.5;
-      } else {
-        lightRotateTheta -=0.1;
-      }
-      theta1 = radians(lightRotateTheta);
-      theta2 = asin(sin(theta1)/n12);
-      n12 = n2/n1;
-      if (lightRotateTheta < -90) {
-        lightRotateTheta = -90;
-      }
-    }
-    theta1 = radians(lightRotateTheta);
-    theta2 = asin(sin(theta1)/n12);
-    n12 = n2/n1;
-  } else {
-    count=0;
-  }
-  fill(255);
-  image(rotateRemocon, width-rotateRemocon.width, height-rotateRemocon.height);
-  text(nf(abs(lightRotateTheta), 1, 1)+"'", width-rotateRemocon.width+5*rotateRemocon.width/12, height-rotateRemocon.height+rotateRemocon.height/4, rotateRemocon.width/3, rotateRemocon.height/2);
-  image(nRemocon, 0, height/2-nRemocon.height);
-  text(nf(n2, 1, 1)+"'", 5*nRemocon.width/12, height/2-nRemocon.height+nRemocon.height/4, nRemocon.width/3, nRemocon.height/2);
-  image(nRemocon, 0, height/2);
-  text(nf(n1, 1, 1)+"'", 5*nRemocon.width/12, height/2+nRemocon.height/4, nRemocon.width/3, nRemocon.height/2);
-}
-
 
 void lineMaxBackgroundSetting() {
   noFill();
@@ -108,7 +64,9 @@ void lineMaxRays() {
   strokeWeight(5);
   stroke(255, 0, 0);
   line(width/2, height/2, width/2-(height/2-height/6)*sin(theta1), height/2+(height/2-height/6)*cos(theta1));
-  stroke(255, 0, 0);
   line(width/2, height/2, width/2+(width)*sin(theta1), height/2+(width)*cos(theta1));
+  if (theta1 == PI/2||theta1 == -PI/2) {
+    stroke(255, 0);
+  }
   line(width/2, height/2, width/2+(width)*sin(theta2), height/2-(width)*cos(theta2));
 }
